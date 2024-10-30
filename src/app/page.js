@@ -1,9 +1,38 @@
-import Image from "next/image";
+"use client";
 import styles from "./page.module.css";
+import { useState } from "react";
+import Login from "./Login";
 
 export default function Home() {
+  const color = (picker) =>{
+    alert(picker);
+  }
+
+const [user,setuser] = useState("toño");
+//let data = "toño";
+const update = () => {
+  data = "Carlos";
+}
+
   return (
-    <div className={styles.page}>
+    <main className={styles.main}>
+      <div className={styles.main}>
+        <h1>Hello world my name is {user}</h1>
+      
+        <button onClick={()=>setuser("carlos")}>Click</button>
+      </div>
+      <div className={styles.main}>
+        <Login />
+      </div>
+    </main>
+
+  );
+}
+
+const Page = (props) =>{
+  return <div>{props.name} Page</div>
+}
+    /*<div className={styles.page}>
       <main className={styles.main}>
         <Image
           className={styles.logo}
@@ -92,4 +121,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+}*/
